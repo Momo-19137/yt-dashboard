@@ -5,8 +5,7 @@
     {
       "src": "images/logo.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "images/logo.png",
@@ -14,10 +13,9 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/yt-dashboard/",
-  "scope": "/yt-dashboard/",
+  "start_url": "https://momo-19137.github.io/yt-dashboard/",
+  "scope": "https://momo-19137.github.io/yt-dashboard/",
   "display": "standalone",
-  "theme_color": "#000000",
   "background_color": "#000000",
-  "orientation": "portrait"
+  "theme_color": "#000000"
 }
