@@ -75,4 +75,14 @@
         </div>
       </noscript>
     </div>
-</body></html>
+<script>
+  // Voorkom dat links de app-modus verlaten
+  document.addEventListener('click', function(e) {
+    var target = e.target.closest('a');
+    if (target && target.href) {
+      e.preventDefault();
+      window.location.href = target.href;
+    }
+  }, false);
+</script>
+  </body></html>
