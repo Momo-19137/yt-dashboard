@@ -2,7 +2,7 @@
   "name": "YouTube Studio",
   "short_name": "YT Studio",
   "description": "Channel Analytics - YouTube Studio Dashboard",
-  "start_url": "/",
+  "start_url": "/yt-dashboard/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
