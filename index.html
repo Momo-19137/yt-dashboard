@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#000000">
     <meta name="description" content="Channel Analytics - YouTube Studio Dashboard">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="YT Studio">
+    
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     
     <script>
       (function() {
-        // Controleert of de app geopend is vanaf het beginscherm
         var isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
-        
-        // Als we in app-modus zijn maar NIET in de juiste submap zitten, stuur door naar het dashboard
         if (isStandalone && !window.location.pathname.includes('yt-dashboard')) {
           window.location.href = 'https://momo-19137.github.io/yt-dashboard/';
         }
@@ -25,7 +25,6 @@
     </script>
     
     <link rel="manifest" href="manifest.json">
-    
     <link rel="apple-touch-icon" href="images/logo.png">
     
     <title>Channel Analytics - YouTube</title>
@@ -34,8 +33,9 @@
         background-color: #000000 !important;
         margin: 0;
         padding: 0;
+        height: 100%;
+        overflow: hidden; /* Voorkomt irritant scrollen van de hele pagina */
       }
-      /* Ensure safe area background is black on mobile devices */
       body::after {
         content: '';
         position: fixed;
@@ -47,9 +47,9 @@
         z-index: 10000;
         pointer-events: none;
       }
-      /* Ensure root element extends to bottom */
       #root {
         padding-bottom: env(safe-area-inset-bottom);
+        height: 100%;
       }
     </style>
     <script type="module" crossorigin="" src="js/index-CdASSFp6.js"></script>
@@ -59,21 +59,11 @@
     <script>
       (function() {
         if ('serviceWorker' in navigator) {
-          // Unregister all service workers immediately
           navigator.serviceWorker.getRegistrations().then(function(registrations) {
             for(let registration of registrations) {
               registration.unregister();
             }
           });
-          
-          // Clear all caches
-          if ('caches' in window) {
-            caches.keys().then(function(names) {
-              for (let name of names) {
-                caches.delete(name);
-              }
-            });
-          }
         }
       })();
     </script>
@@ -82,19 +72,7 @@
       <noscript>
         <div style="color: white; padding: 20px; text-align: center;">
           <h1>JavaScript is required</h1>
-          <p>Please enable JavaScript to use this application.</p>
         </div>
       </noscript>
     </div>
-    <script>
-      // Fallback: If module fails to load, show error after 3 seconds
-      setTimeout(function() {
-        var root = document.getElementById('root');
-        if (root && root.children.length === 0) {
-          // Check of we in de loader hangen en forceer weergave als dat zo is
-          console.log("Check of content is geladen...");
-        }
-      }, 3000);
-    </script>
-  
 </body></html>
