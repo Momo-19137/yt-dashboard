@@ -12,6 +12,18 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     
+    <script>
+      (function() {
+        // Controleert of de app geopend is vanaf het beginscherm
+        var isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+        
+        // Als we in app-modus zijn maar NIET in de juiste submap zitten, stuur door naar het dashboard
+        if (isStandalone && !window.location.pathname.includes('yt-dashboard')) {
+          window.location.href = 'https://momo-19137.github.io/yt-dashboard/';
+        }
+      })();
+    </script>
+    
     <link rel="manifest" href="manifest.json">
     
     <link rel="apple-touch-icon" href="images/logo.png">
@@ -85,5 +97,4 @@
       }, 3000);
     </script>
   
-
 </body></html>
